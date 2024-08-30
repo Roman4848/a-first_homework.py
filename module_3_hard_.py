@@ -2,7 +2,7 @@ def calculate_structure_sum(data):
     total = 0
 
     
-    if isinstance(data, (list, tuple)):
+    if isinstance(data, (list, tuple, set)):
         for item in data:
             total += calculate_structure_sum(item)
     elif isinstance(data, dict):
