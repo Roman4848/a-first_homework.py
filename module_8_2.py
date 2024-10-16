@@ -11,7 +11,7 @@ def personal_sum(numbers):
 
 def calculate_average(numbers):
     try:
-        if not isinstance(numbers, list):
+        if not isinstance(numbers, (list, tuple, set)):
             print("В numbers записан некорректный тип данных")
             return None
         if len(numbers) == 0:
