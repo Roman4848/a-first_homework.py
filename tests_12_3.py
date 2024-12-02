@@ -32,3 +32,7 @@ class TournamentTest(unittest.TestCase):
     @skip_if_frozen
     def test_second_tournament(self):
         self.assertTrue(True)
+
+    @skip_if_frozen
+    def test_third_tournament(self):
+        self.assertFalse(True)
