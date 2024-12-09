@@ -56,5 +56,10 @@ async def send_calories(message: types.Message, state: FSMContext):
     await state.finish()  # Завершение состояний
 
 
+@dp.message_handler()
+async def all_messages(message: types.Message):
+    await message.answer("Используйте команду /calories для расчета нормы калорий.")
+
+
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates = True)
