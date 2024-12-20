@@ -6,7 +6,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import os
 
-api = '7841349573:AAGNrcqGkIpJP1kINT3reOYbSjPxz2ylDOA'  # Замените на свой токен
+api = 'Напишите свой ключь'  
 
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
@@ -107,7 +107,7 @@ async def send_calories(message: types.Message, state: FSMContext):
 async def buying_menu(message: types.Message):
     await message.answer("Вот все доступные продукты:")
 
-    # Отправляем изображения продуктов
+    
     await message.answer_photo(photo=open('files/product1.png', 'rb'),
                                caption="Название: Product1\nОписание: Описание 1\nЦена: 100")
     await message.answer_photo(photo=open('files/product2.png', 'rb'),
@@ -117,7 +117,7 @@ async def buying_menu(message: types.Message):
     await message.answer_photo(photo=open('files/product4.png', 'rb'),
                                caption="Название: Product4\nОписание: Описание 4\nЦена: 400")
 
-    # Предлагаем пользователю выбрать продукт
+    
     await message.answer("Выберите продукт, нажав на кнопку ниже:", reply_markup=inline_buy_kb)
 
 
