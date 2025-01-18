@@ -1,12 +1,17 @@
+import logging
 from fastapi import FastAPI
-from routers import task, user
+from app.db import engine
+from app.models import Base
+from app.routers import main as routers
+
+# Настройка логирования
+logging.basicConfig()
+logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
 
 app = FastAPI()
 
-@app.get("/")
-async def root():
-    return {"message": "Welcome to Taskmanager"}
+# Создание таблиц
+Base.metadata.create_all(bind=engine)
 
-
-app.include_router(task.router)
-app.include_router(user.router)
+# Подключение маршрутов
+app.include_router(routers.router)
