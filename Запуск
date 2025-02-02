@@ -1,0 +1,3 @@
+cd detection_site
+venv\Scripts\activate
+python manage.py runserver
